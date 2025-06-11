@@ -1,0 +1,46 @@
+<html>
+<body>
+  <h2>جاري التحميل... انتظر من 15 إلى 20 ثانية</h2>
+
+  <!-- تحميل الخطوط الضرورية قبل تنفيذ الإكسبلويت -->
+  <div style="opacity: 0">
+    <p><i>نص مائل</i></p>
+    <table>
+      <tr>
+        <th>عنوان 1</th>
+        <th>عنوان 2</th>
+        <th>عنوان 3</th>
+      </tr>
+      <tr>
+        <td>نص</td>
+        <td><input value="نص" /></td>
+        <td><button>نص</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function loadScript(path) {
+      var xhr = new XMLHttpRequest(path);
+      xhr.open("GET.html", path, false);
+      xhr.send('');
+      return xhr.responseText;
+    }
+
+    setTimeout(function () {
+      eval.call(window,
+        loadScript('netcat.js') +
+        loadScript('exploit.js') +
+        loadScript('malloc.js') +
+        loadScript('rop_sleirs.js') +
+        loadScript('syscalls.js') +
+        loadScript('syscalls2.js') +
+        loadScript('payload.js') +
+        loadScript('relocator.js') +
+        loadScript('frontend.js')
+      );
+      document.getElementById('q').innerHTML = 'تم التحميل بنجاح';
+    }, 50);
+  </script>
+</body>
+</html>
