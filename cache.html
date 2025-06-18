@@ -1,71 +1,21 @@
 <html manifest="psfree_lapse.cache">
 <head>
-  <title>معرض اياد القريشي للتواصل : 07731115006</title>
-  <style>
-    body {
-      background: url('icon0.png'), linear-gradient(to bottom right, #063FAB, #01258A);
-      color: white;
-      font-size: 28px;
-      text-align: center;
-      margin: 0;
-      overflow: hidden;
-      font-family: sans-serif;
-    }
-    .info {
-      position: relative;
-      top: 35%;
-    }
-    .progress-bar {
-      width: 80%;
-      height: 30px;
-      background-color: #333;
-      border-radius: 15px;
-      overflow: hidden;
-      margin: 20px auto;
-      box-shadow: 0 0 5px #000;
-    }
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background-color: #00ff00;
-      text-align: center;
-      line-height: 30px;
-      color: black;
-      font-weight: bold;
-    }
-  </style>
-  <script>
-    history.replaceState(null, null, 'index.html');
-    var histlength = history.length;
-    history.go(-histlength);
-
-    function DLProgress(e) {
-      let percent = Math.round(e.loaded / e.total * 100);
-      document.getElementById("msgs").innerHTML = "يتم تثبيت الملفات... " + percent + "%";
-      document.querySelector(".progress-fill").style.width = percent + "%";
-      document.querySelector(".progress-fill").textContent = percent + "%";
-    }
-
-    function DisplayCacheProgress() {
-      setTimeout(function () {
-        document.getElementById("msgs").innerHTML = "تم التثبيت بنجاح";
-        document.querySelector(".progress-fill").textContent = "100%";
-        document.querySelector(".progress-fill").style.width = "100%";
-      }, 2000);
-      setTimeout(function () {
-        location.reload();
-      }, 3000);
-    }
-
-    window.applicationCache.addEventListener("progress", DLProgress, false);
-    window.applicationCache.oncached = function (e) { DisplayCacheProgress(); };
-    window.applicationCache.onupdateready = function (e) { DisplayCacheProgress(); };
-  </script>
+<title>هوست معرض أياد القريشي للتواصل : 07731115006</title>
+<style>
+body{background:url('icon0.png'); linear-gradient(to bottom right, #063FAB, #01258A);color:white;font-size:28px;text-align:center;margin:0;overflow:hidden;}
+.info{position:relative;top:39%;}
+</style>
+<script>
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));msgs.innerHTML="جارٍ تنصيب البيانات المؤقتة " + Percent + "%"};
+function DisplayCacheProgress(){
+setTimeout(function(){msgs.innerHTML="تم نصيب البيانات المؤقتة بنجاح";},2000);
+setTimeout(function(){location.reload();},3000);
+}
+window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
 </head>
-<body>
-  <div class="info" id="msgs">جاري التحميل...</div>
-  <div class="progress-bar">
-    <div class="progress-fill">0%</div>
-  </div>
+<body style=overflow:hidden>
+<div id=msgs class=info style='-webkit-font-feature-settings:"tnum";font-feature-settings:"tnum";'></div>
 </body>
 </html>
